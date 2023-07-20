@@ -100,6 +100,7 @@ pipeline:
           --with-stream_geoip_module=dynamic \
           --with-stream_ssl_preread_module
   - runs: |
+      make -j$(nproc)
       make DESTDIR=${{targets.destdir}} install
       # default error logs to standard error
       sed -i 's/#error_log  logs\/error.log;$/error_log  stderr  notice;/' ${{targets.destdir}}/etc/nginx/nginx.conf
