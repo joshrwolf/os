@@ -1,6 +1,6 @@
 package:
   name: linux-headers
-  version: 6.6.29
+  version: 6.8.9
   epoch: 0
   description: "the Linux kernel headers (cross compilation)"
   copyright:
@@ -20,7 +20,7 @@ pipeline:
     with:
       repository: https://github.com/gregkh/linux
       tag: v${{package.version}}
-      expected-commit: a3463f08104612fc979c41fa54733e925205d3d7
+      expected-commit: cfaefda38f0cdf9d0a0f4d0f01bbb9227b6958a0
 
   - runs: |
       make mrproper
@@ -41,4 +41,4 @@ update:
     identifier: gregkh/linux
     strip-prefix: v
     use-tag: true
-    tag-filter: v6.6.
+    tag-filter: v6.8.
