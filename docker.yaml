@@ -145,6 +145,7 @@ subpackages:
     dependencies:
       runtime:
         - docker
+        - mount
     pipeline:
       - runs: |
           install -Dm755 /home/build/hack/dind "${{targets.subpkgdir}}"/usr/bin/dind
